@@ -42,7 +42,6 @@ export async function renderImgCard(dataArr) {
 
     lightbox.refresh();
   } catch (error) {
-    // Обробка помилок, якщо потрібно
     console.error('Error rendering images:', error);
     iziToast.error({
       title: 'Error',

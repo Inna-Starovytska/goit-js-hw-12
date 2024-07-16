@@ -159,7 +159,7 @@ li {
   text-align: center;
   margin-top: 20px;
 }
-.load-more {
+.button-load-more {
   display: block;
   margin: 20px auto;
   padding: 10px 20px;
@@ -177,9 +177,13 @@ li {
   color: white;
   cursor: pointer;
 }
-.load-more:hover {
+.button-load-more:hover {
   background: #6c8cff;
 }
+.button.is-hidden {
+  display: none;
+}
+
 .loader {
   width: 48px;
   height: 48px;
