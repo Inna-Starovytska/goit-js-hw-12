@@ -67,16 +67,19 @@ li {
   letter-spacing: 0.04em;
   color: #2e2f42;
 }
-.input:hover {
+.search-input:hover {
   border: 1px solid #000;
 }
 
-.input::placeholder {
+.search-input::placeholder {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: #808080;
+}
+.button.is-hidden {
+  display: none;
 }
 
 .btn {
@@ -100,6 +103,28 @@ li {
 }
 
 .btn:hover {
+  background: #6c8cff;
+}
+
+.button-load-more {
+  display: flex;
+  margin: 24px auto;
+  padding: 10px 20px;
+  gap: 10px;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  width: 125px;
+  height: 40px;
+  background: #4e75ff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: white;
+  cursor: pointer;
+}
+.button-load-more:hover {
   background: #6c8cff;
 }
 
@@ -153,35 +178,6 @@ li {
   line-height: 2;
   letter-spacing: 0.04em;
   color: #2e2f42;
-}
-.load-more-container {
-  /* display: none; */
-  text-align: center;
-  margin-top: 20px;
-}
-.button-load-more {
-  display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
-  gap: 10px;
-  border: none;
-  border-radius: 8px;
-  padding: 8px 16px;
-  width: 125px;
-  height: 40px;
-  background: #4e75ff;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-  color: white;
-  cursor: pointer;
-}
-.button-load-more:hover {
-  background: #6c8cff;
-}
-.button.is-hidden {
-  display: none;
 }
 
 .loader {

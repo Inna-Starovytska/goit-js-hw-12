@@ -1,9 +1,14 @@
 //
-
+import axios from 'axios';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
-import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
+// import SimpleLightbox from 'simplelightbox';
+// import 'simplelightbox/dist/simple-lightbox.min.css';
+
+export const pagination = {
+  page: 1,
+  perPage: 15,
+};
 
 const spinner = document.querySelector('.loader');
 
@@ -16,20 +21,20 @@ export function hideSpinner() {
 }
 
 export async function fetchImages(query) {
-  const API_KEY = '44914505-36a6b847b314a6ef1bce975f7';
+  const params = new URLSearchParams({
+    key: '44914505-36a6b847b314a6ef1bce975f7',
+    q: query,
+    image_type: 'photo',
+    orientation: 'horizontal',
+    safesearch: true,
+    per_page: pagination.perPage,
+    page: pagination.page,
+  });
   showSpinner();
 
   try {
-    const response = await fetch(
-      `https://pixabay.com/api/?key=${API_KEY}&q=${query}&image_type=photo&orientation=horizontal&safesearch=true`
-    );
-
-    if (!response.ok) {
-      throw new Error('Failed to fetch images');
-    }
-
-    const data = await response.json();
-    return data;
+    const response = await axios.get(`https://pixabay.com/api/?${params}`);
+    return response.data;
   } catch (error) {
     onFetchError(error);
     throw error;
